@@ -1,0 +1,566 @@
+/* styles/cockpit.module.css */
+
+/* ─── Pagina layout ─────────────────────────────────────── */
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1a1a1a;
+  background: #f7f7f5;
+  min-height: 100vh;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 14px;
+  color: #6b6b67;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.pageTitle {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.syncLabel {
+  font-size: 12px;
+  color: #6b6b67;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.syncDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #639922;
+  display: inline-block;
+}
+
+.settingsLink {
+  font-size: 13px;
+  color: #185FA5;
+  text-decoration: none;
+}
+.settingsLink:hover { text-decoration: underline; }
+
+/* ─── Stats ──────────────────────────────────────────────── */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.stat {
+  background: #fff;
+  border-radius: 10px;
+  border: 0.5px solid rgba(0,0,0,0.1);
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.statNum {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.statLbl {
+  font-size: 11px;
+  color: #6b6b67;
+  margin-top: 2px;
+}
+
+/* ─── Waarschuwingen ────────────────────────────────────── */
+.warningBanner {
+  background: #FAEEDA;
+  color: #633806;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  border: 0.5px solid #FAC775;
+}
+.warningBanner a { color: #633806; font-weight: 500; }
+
+/* ─── Main grid ──────────────────────────────────────────── */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ─── Kaart ──────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border: 0.5px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b6b67;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Badges ─────────────────────────────────────────────── */
+.badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.badgeBlue   { background: #E6F1FB; color: #0C447C; }
+.badgeRed    { background: #FCEBEB; color: #791F1F; }
+.badgeGreen  { background: #EAF3DE; color: #27500A; }
+.badgeGray   { background: #F1EFE8; color: #444441; }
+.badgeAmber  { background: #FAEEDA; color: #633806; }
+
+/* ─── Filter ─────────────────────────────────────────────── */
+.filterRow {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 0.5px solid rgba(0,0,0,0.15);
+  background: transparent;
+  color: #6b6b67;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.1s;
+}
+.filterBtn:hover { background: #f1f1ee; }
+.filterBtnActive { background: #185FA5 !important; border-color: #185FA5 !important; color: #fff !important; }
+
+/* ─── Jira items ─────────────────────────────────────────── */
+.jiraItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: background 0.1s;
+  border-radius: 6px;
+  margin: 0 -4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.jiraItem:last-of-type { border-bottom: none; }
+.jiraItem:hover { background: #f7f7f5; }
+.jiraItemSelected { background: #EBF3FB !important; }
+
+.jiraKey {
+  font-size: 11px;
+  font-weight: 600;
+  color: #185FA5;
+  min-width: 72px;
+  padding-top: 1px;
+}
+
+.jiraBody { flex: 1; }
+
+.jiraTitle {
+  font-size: 13px;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.jiraMeta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.priorityDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sprintLabel {
+  font-size: 11px;
+  color: #9b9b97;
+}
+
+.statusPill {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+.sp-todo    { background: #D3D1C7; color: #444441; }
+.sp-prog    { background: #B5D4F4; color: #0C447C; }
+.sp-review  { background: #FAC775; color: #633806; }
+.sp-done    { background: #C0DD97; color: #27500A; }
+
+/* ─── Update panel ──────────────────────────────────────── */
+.updatePanel {
+  margin-top: 16px;
+  border-top: 0.5px solid rgba(0,0,0,0.1);
+  padding-top: 14px;
+}
+
+.selectedIssue {
+  background: #f7f7f5;
+  border: 0.5px solid #B5D4F4;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.selKey {
+  font-size: 11px;
+  font-weight: 600;
+  color: #185FA5;
+}
+
+.selTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-top: 3px;
+}
+
+.selDesc {
+  font-size: 12px;
+  color: #6b6b67;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.updateTextarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: #f7f7f5;
+  border: 0.5px solid rgba(0,0,0,0.18);
+  border-radius: 8px;
+  padding: 8px 10px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.updateTextarea:focus { border-color: #378ADD; box-shadow: 0 0 0 2px rgba(55,138,221,0.12); }
+
+.btnRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.statusSelect {
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(0,0,0,0.15);
+  background: #f7f7f5;
+  color: #1a1a1a;
+  font-family: inherit;
+  margin-right: auto;
+}
+
+.btn {
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(0,0,0,0.15);
+  background: transparent;
+  color: #1a1a1a;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.1s;
+}
+.btn:hover { background: #f1f1ee; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btnPrimary {
+  background: #185FA5 !important;
+  border-color: #185FA5 !important;
+  color: #fff !important;
+}
+.btnPrimary:hover { background: #0C447C !important; }
+
+.successMsg {
+  font-size: 12px;
+  color: #27500A;
+  background: #EAF3DE;
+  border-radius: 8px;
+  padding: 7px 12px;
+  margin-top: 8px;
+}
+
+.errorMsg {
+  font-size: 12px;
+  color: #791F1F;
+  background: #FCEBEB;
+  border-radius: 8px;
+  padding: 7px 12px;
+  margin-top: 8px;
+}
+
+.loadingInline { font-size: 13px; color: #9b9b97; padding: 8px 0; }
+.emptyState { font-size: 13px; color: #9b9b97; padding: 12px 0; text-align: center; }
+
+/* ─── Mail ───────────────────────────────────────────────── */
+.mailItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 0.5px solid rgba(0,0,0,0.07);
+}
+.mailItem:last-child { border-bottom: none; }
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.mailBody { flex: 1; min-width: 0; }
+
+.mailSender {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mailSubject {
+  font-size: 12px;
+  color: #6b6b67;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mailTime {
+  font-size: 11px;
+  color: #9b9b97;
+  flex-shrink: 0;
+}
+
+.unreadDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #378ADD;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ─── Agenda ─────────────────────────────────────────────── */
+.agendaItem {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 0.5px solid rgba(0,0,0,0.07);
+}
+.agendaItem:last-child { border-bottom: none; }
+
+.agendaTime {
+  font-size: 11px;
+  color: #6b6b67;
+  min-width: 46px;
+  line-height: 1.5;
+}
+
+.agendaBar {
+  width: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  min-height: 36px;
+}
+
+.agendaDetails { flex: 1; }
+
+.agendaTitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.agendaSub {
+  font-size: 11px;
+  color: #6b6b67;
+  margin-top: 2px;
+}
+
+.addEventLink {
+  display: block;
+  font-size: 12px;
+  color: #185FA5;
+  text-decoration: none;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 0.5px solid rgba(0,0,0,0.07);
+}
+
+/* ─── Login pagina ───────────────────────────────────────── */
+.loginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f7f7f5;
+}
+
+.loginCard {
+  background: #fff;
+  border-radius: 16px;
+  border: 0.5px solid rgba(0,0,0,0.1);
+  padding: 2.5rem 3rem;
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+}
+
+.loginTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.loginSub {
+  font-size: 14px;
+  color: #6b6b67;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Integraties pagina ─────────────────────────────────── */
+.settingsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.integrationCard {
+  background: #fff;
+  border: 0.5px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.integHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.integIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.integInfo { flex: 1; }
+
+.integName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.integDesc {
+  font-size: 12px;
+  color: #6b6b67;
+  margin-top: 2px;
+}
+
+.scopeList {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.scopePill {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: #f1f1ee;
+  color: #5F5E5A;
+}
+
+.securityNote {
+  background: #EAF3DE;
+  color: #27500A;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page { padding: 1rem; }
+  .mainGrid { grid-template-columns: 1fr; }
+  .statsRow { grid-template-columns: repeat(3, 1fr); }
+  .jiraCol { order: 1; }
+}
